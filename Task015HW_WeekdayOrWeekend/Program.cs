@@ -13,12 +13,12 @@ int userNumber = Convert.ToInt32(Console.ReadLine());
 
 if (userNumber < 8 && userNumber > 0)
 {
-    if (userNumber > 0 && userNumber < 6)
-    {
-        Console.WriteLine("No. (Poor you, it's a weekday.)");
-    }
-    else Console.WriteLine("Yes. (Lucky you! It' s a weekend! Have fun!");
+    string answer = WeekdayOrWeekend(userNumber);
+    Console.WriteLine(answer);
 }
 else Console.WriteLine($"Number {userNumber} is not from 1 till 7. Try again!");
 
-
+string WeekdayOrWeekend(int number)
+{
+    return userNumber > 0 && userNumber < 6 ? "No. (Poor you, it's a weekday.)" : "Yes. (Lucky you! It' s a weekend! Have fun!";
+}

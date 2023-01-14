@@ -8,8 +8,10 @@
 int arrayLength = 8;
 int[] array = CreateArray(arrayLength);
 FillArray(array);
-PrintArray(array);
 
+String output = PrintArray(array);
+Console.WriteLine($"{output} -> [{output}]");
+//PrintArray(array);
 
 
 int[] CreateArray(int length)
@@ -27,7 +29,7 @@ void FillArray(int[] myArray)
     }
 }
 
-void PrintArray (int[] ohMyArray)
+/*void PrintArray (int[] ohMyArray)
 {
     for (int i = 0; i < ohMyArray.Length-1; i++)
     {
@@ -39,4 +41,10 @@ void PrintArray (int[] ohMyArray)
         Console.Write(ohMyArray[j] + ", ");
     }
     Console.Write(ohMyArray[ohMyArray.Length-1] + "]");
+}*/
+
+String PrintArray (int[] ohMyArray)
+{
+    string s = String.Join(", ", ohMyArray);
+    return s;
 }

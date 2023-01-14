@@ -15,14 +15,14 @@ int numberB = Convert.ToInt32(Console.ReadLine());
 bool areNatural = AreNatural(numberA, numberB);
 if (areNatural != true)
 {
-int aDegreeB = Degree(numberA, numberB);
+    int aDegreeB = Degree(numberA, numberB);
 
-Console.WriteLine ($"{numberA} to the degree of {numberB} is {aDegreeB}.");}
-
+    Console.WriteLine($"{numberA} to the power of {numberB} is {aDegreeB}.");
+}
 
 bool AreNatural(int a, int b)
 {
-    if ((a <= 0) || (b <=0))
+    if ((a <= 0) || (b <= 0))
     {
         if (a <= 0)
         {
@@ -32,14 +32,17 @@ bool AreNatural(int a, int b)
         {
             Console.WriteLine($"Your second number {b} is not natural. Try again!");
         }
-    return true;
+        return true;
     }
     else return false;
-    
+
 }
 
-int Degree (int number1, int number2)
+int Degree(int number1, int number2)
 {
-    int degree = Convert.ToInt32(Math.Pow(number1, number2));
-    return degree;
+    checked
+    {
+        int degree = Convert.ToInt32(Math.Pow(number1, number2));
+        return degree;
+    }
 }

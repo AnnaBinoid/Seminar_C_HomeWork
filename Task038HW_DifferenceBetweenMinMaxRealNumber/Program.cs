@@ -1,0 +1,70 @@
+﻿/*
+Задача 38: Задайте массив вещественных чисел. 
+Найдите разницу между максимальным и минимальным элементов массива.
+
+[3.5, 7.1, 22.9, 2.3, 78.5] -> 76.2
+*/
+int myArraySize = 5;
+int min = 1;
+int max = 100;
+
+double[] myArray = CreateArray(myArraySize, min, max);
+PrintArray(myArray);
+
+double maxDouble = MaxDouble(myArray);
+double minDouble = MinDouble(myArray);
+double diffMaxMin = DifferenceMaxMinRealNumber(maxDouble, minDouble);
+
+Console.WriteLine($"The difference between max number: {maxDouble} and min number: {minDouble} in this array is {diffMaxMin}.");
+
+
+double[] CreateArray(int size, int min, int max)
+{
+    double[] array = new double[size];
+    Random rnd = new Random();
+
+    for (int i = 0; i < array.Length; i++)
+    {
+        double num = rnd.NextDouble() * (max - min) + min;
+        array[i] = Math.Round(num, 1);
+    }
+    return array;
+}
+
+void PrintArray(double[] arr)
+{
+    for (int i = 0; i < arr.Length - 1; i++)
+    {
+        Console.Write($"{arr[i]}, ");
+    }
+    Console.WriteLine(arr[arr.Length - 1]);
+}
+
+double MaxDouble(double[] arrMax)
+{
+    double maximumDouble = arrMax[0];
+
+    for (int i = 1; i < arrMax.Length; i++)
+    {
+        if (arrMax[i] > maximumDouble) maximumDouble = arrMax[i];
+    }
+    return maximumDouble;
+}
+
+double MinDouble(double[] arrMin)
+{
+    double minimumDouble = arrMin[0];
+    for (int i = 1; i < arrMin.Length; i++)
+    {
+        {
+            if (arrMin[i] < minimumDouble) minimumDouble = arrMin[i];
+        }
+    }
+    return minimumDouble;
+}
+
+double DifferenceMaxMinRealNumber(double max, double min)
+{
+    double diff = max - min;
+    return Math.Round(diff, 1);
+}

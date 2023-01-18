@@ -23,11 +23,12 @@ int[] CreateArray(int length)
 
 void PrintArray(int[] myArray)
 {
-    for (int i = 0; i < myArray.Length - 1; i++)
+    for (int i = 0; i < myArray.Length; i++)
     {
-        Console.Write($"{myArray[i]}, ");
+        if (i < myArray.Length - 1) Console.Write($"{myArray[i]}, ");
+        else Console.WriteLine(myArray[i]);
     }
-    Console.WriteLine(myArray[myArray.Length - 1]);
+    Console.WriteLine(String.Empty);
 }
 
 int CountOfEven(int[] arr)

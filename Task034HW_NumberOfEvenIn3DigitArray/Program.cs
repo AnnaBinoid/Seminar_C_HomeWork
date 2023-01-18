@@ -4,12 +4,12 @@
  [345, 897, 568, 234] -> 2
     */
 int size = 10;
-int[] array= CreateArray(size);
+int[] array = CreateArray(size);
 PrintArray(array);
 int count = CountOfEven(array);
 Console.WriteLine($"The number of even numbers in this array is {count}.");
 
-int[] CreateArray (int length)
+int[] CreateArray(int length)
 {
     int[] arr = new int[length];
     Random rnd = new Random();
@@ -21,21 +21,21 @@ int[] CreateArray (int length)
     return arr;
 }
 
-void PrintArray (int[] myArray)
+void PrintArray(int[] myArray)
 {
-    for (int i = 0; i < myArray.Length-1; i++)
+    for (int i = 0; i < myArray.Length - 1; i++)
     {
         Console.Write($"{myArray[i]}, ");
     }
-    Console.WriteLine(myArray[myArray.Length-1]);
+    Console.WriteLine(myArray[myArray.Length - 1]);
 }
 
-int CountOfEven (int[] arr)
+int CountOfEven(int[] arr)
 {
     int count = 0;
     for (int i = 0; i < arr.Length; i++)
     {
-        if (arr[i]%2 == 0)
+        if (arr[i] % 2 == 0)
         {
             count++;
         }

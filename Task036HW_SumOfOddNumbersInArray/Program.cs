@@ -7,9 +7,10 @@
 [-4, -6, 89, 6] -> 0
 */
 
-int size = 5;
+int size = 6;
 int[] myArray = CreateArray(size);
 PrintArray(myArray);
+
 int summOddElements = SummOfOddElements(myArray);
 Console.WriteLine($"The summ of odd elements in array is {summOddElements}.");
 
@@ -27,11 +28,12 @@ int[] CreateArray(int length)
 
 void PrintArray(int[] arr)
 {
-    for (int i = 0; i < arr.Length - 1; i++)
+    for (int i = 0; i < arr.Length; i++)
     {
-        Console.Write($"{arr[i]}, ");
+        if (i < arr.Length - 1) Console.Write($"{arr[i]}, ");
+        else Console.WriteLine(arr[arr.Length - 1]);
     }
-    Console.WriteLine(arr[arr.Length - 1]);
+    Console.WriteLine(String.Empty);
 }
 
 int SummOfOddElements(int[] array)

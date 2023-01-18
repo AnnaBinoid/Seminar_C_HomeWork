@@ -15,7 +15,7 @@ double maxDouble = MaxDouble(myArray);
 double minDouble = MinDouble(myArray);
 double diffMaxMin = DifferenceMaxMinRealNumber(maxDouble, minDouble);
 
-Console.WriteLine($"The difference between max number: {maxDouble} and min number: {minDouble} in this array is {diffMaxMin}.");
+Console.WriteLine($"The difference between max ({maxDouble}) and min ({minDouble}) numbers in array is {diffMaxMin}.");
 
 
 double[] CreateArray(int size, int min, int max)
@@ -33,11 +33,11 @@ double[] CreateArray(int size, int min, int max)
 
 void PrintArray(double[] arr)
 {
-    for (int i = 0; i < arr.Length - 1; i++)
+    for (int i = 0; i < arr.Length; i++)
     {
-        Console.Write($"{arr[i]}, ");
+        if (i < arr.Length-1) Console.Write($"{arr[i]}, ");
+        else Console.WriteLine (arr[i]);
     }
-    Console.WriteLine(arr[arr.Length - 1]);
 }
 
 double MaxDouble(double[] arrMax)

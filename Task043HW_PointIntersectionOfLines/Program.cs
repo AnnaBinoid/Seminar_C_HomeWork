@@ -19,6 +19,7 @@ double valueX = GetX(valueB1, valueK1, valueB2, valueK2);
 double valueY = GetY(valueB1, valueK1, valueB2, valueK2, valueX);
 
 Console.WriteLine($"If B1 = {valueB1}, K1 = {valueK1}, B2 = {valueB2}, K2 = {valueK2};\nX = {valueX}; Y = {valueY}.");
+// Здесь для красоты вывода можно было использовать Math.Round(valueX, 4) и Math.Round(valueY, 4), но в тз не было ничего по этому поводу.
 
 double GetX(double b1, double k1, double b2, double k2)
 {

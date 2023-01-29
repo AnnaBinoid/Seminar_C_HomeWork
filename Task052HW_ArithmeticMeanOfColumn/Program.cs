@@ -16,7 +16,9 @@ int minValueRnd = 1;
 int maxValueRnd = 11;
 int[,] matrixRnd = CreateMatrix(matrixRows, matrixColumns, minValueRnd, maxValueRnd);
 PrintMatrix(matrixRnd);
+
 Console.WriteLine(String.Empty);
+
 double[] arrAverage = FindAverageInColumns(matrixRnd, matrixColumns, matrixRows);
 Console.Write("Arithmetic means of each column are: ");
 PrintArray(arrAverage);
